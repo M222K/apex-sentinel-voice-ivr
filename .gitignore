@@ -5,6 +5,15 @@ build/
 dist/
 wheels/
 *.egg-info
+*.py[cod]
+*$py.class
 
 # Virtual environments
 .venv
+
+# IDE files
+.vscode/
+.idea/
+
+# Local ngrok logs
+*.log

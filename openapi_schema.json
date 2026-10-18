@@ -1,0 +1,221 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Apex Banking Tools",
+    "version": "1.0.0",
+    "description": "Core banking actions engine for authentication, card security management, and account queries."
+  },
+  "servers": [
+    {
+      "url": "https://YOUR_NGROK_URL.ngrok-free.app",
+      "description": "Active Webhook Server Base URL"
+    }
+  ],
+  "paths": {
+    "/api/v1/tools/send-otp": {
+      "post": {
+        "summary": "Send OTP to user mobile",
+        "description": "Dispatches a 4-digit verification OTP to the user's registered phone number.",
+        "operationId": "send_otp",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "account_id": {
+                    "type": "string",
+                    "description": "The customer's account or phone identifier"
+                  }
+                },
+                "required": ["account_id"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OTP sent successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "account_id": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tools/verify-otp": {
+      "post": {
+        "summary": "Verify user OTP",
+        "description": "Verifies the 4-digit OTP provided by the caller against the active session state.",
+        "operationId": "verify_otp",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "account_id": {
+                    "type": "string",
+                    "description": "The customer's account or phone identifier"
+                  },
+                  "user_otp": {
+                    "type": "string",
+                    "description": "The 4-digit OTP entered or spoken by the user"
+                  }
+                },
+                "required": ["account_id", "user_otp"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Verification result returned",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "authenticated": {
+                      "type": "boolean"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tools/lock-card": {
+      "post": {
+        "summary": "Lock a credit or debit card immediately",
+        "description": "Locks a payment card. Use when a user asks to block or lock their lost or stolen card.",
+        "operationId": "lock_card",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "caller_id": {
+                    "type": "string",
+                    "description": "Unique identifier or account ID for the caller"
+                  },
+                  "card_last_four": {
+                    "type": "string",
+                    "description": "The last 4 digits of the card to lock"
+                  }
+                },
+                "required": ["card_last_four"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Card locked successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "card_last_four": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "action_taken": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/tools/get-balance": {
+      "post": {
+        "summary": "Retrieve account balance details",
+        "description": "Retrieves the current available balance for a specific account.",
+        "operationId": "get_balance",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "account_id": {
+                    "type": "string",
+                    "description": "The specific account ID to query balance for"
+                  }
+                },
+                "required": ["account_id"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Balance fetched successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "account_id": {
+                      "type": "string"
+                    },
+                    "available_balance": {
+                      "type": "number"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
