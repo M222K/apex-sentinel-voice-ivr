@@ -3,6 +3,9 @@ from typing import Dict, Any, Optional
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
+import random
+
+
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -27,6 +30,19 @@ async def add_ngrok_skip_header(request: Request, call_next):
     response = await call_next(request)
     response.headers["ngrok-skip-browser-warning"] = "true"
     return response
+
+# Temporary in-memory OTP storage: { "phone_or_account": "1234" }
+otp_store: Dict[str, str] = {}
+
+
+class SendOTPRequest(BaseModel):
+    account_id: str = Field(...,description="Target account or user phone identifier")
+
+
+class VerifyOTPRequest(BaseModel):
+    account_id: str = Field(...,description="Target account or user phone identifier")
+    user_otp: str = Field(...,description="The 4-digit OTP provided by the caller")
+
 
 
 # --- Pydantic Request Models ---
@@ -89,6 +105,41 @@ async def get_balance(payload: GetBalanceRequest) -> Dict[str, Any]:
         "message": "Your available account balance is 12,450 dollars and 80 cents.",
     }
 
+
+@app.post("/api/v1/tools/send-otp")
+async def send_otp(payload: SendOTPRequest) -> Dict[str, Any]:
+    # Generate a random 4-digit code (for testing, fix to "1234" or generate dynamically)
+    generated_otp = str(random.randint(1000, 9999))
+    otp_store[payload.account_id] = generated_otp
+
+    # In production: invoke SMS service (Twilio/AWS SNS) here
+    print(
+        f"[SMS SERVICE MOCK] Sent OTP {generated_otp} to user {payload.account_id}")
+
+    return {
+        "status": "success",
+        "account_id": payload.account_id,
+        "message": f"An OTP has been dispatched to the mobile number registered with account {payload.account_id}."
+    }
+
+
+@app.post("/api/v1/tools/verify-otp")
+async def verify_otp(payload: VerifyOTPRequest) -> Dict[str, Any]:
+    # Default to 1234 for sandbox testing
+    stored_otp = otp_store.get(payload.account_id, "1234")
+
+    if payload.user_otp == stored_otp:
+        return {
+            "authenticated": True,
+            "status": "success",
+            "message": "OTP verification successful."
+        }
+    else:
+        return {
+            "authenticated": False,
+            "status": "failed",
+            "message": "The entered OTP is incorrect."
+        }
 
 if __name__ == "__main__":
     import uvicorn
