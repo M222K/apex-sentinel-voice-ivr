@@ -1,0 +1,55 @@
+{
+  "name": "e017fcaa-0233-4c94-9671-6235f4fd4c50",
+  "actions": [ {
+    "userUtterance": {
+      "text": "hello"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Hello! I'm Ria, your virtual assistant for Apex Financial. How can I help you today?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "what can you help with"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "I can help you check your account balance, lock a misplaced debit or credit card. What would you like to do?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "i want to generate a atm pin"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "I apologize, but I am unable to assist with generating an ATM PIN. Please visit your nearest bank branch to handle this request."
+    }
+  }, {
+    "userUtterance": {
+      "text": "okau"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Is there anything else I can assist you with today?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "no"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Thank you for contacting Apex Financial. Have a great day!"
+    }
+  } ],
+  "playbookOutput": {
+    "executionSummary": "Agent provided the solution to visit nearest branch and asked for any other help, user denied, agent ended session with greetings.",
+    "actionParameters": {
+    
+    }
+  },
+  "displayName": "Different_query",
+  "retrievalStrategy": "DEFAULT",
+  "tokenCount": 275,
+  "conversationState": "OUTPUT_STATE_OK",
+  "languageCode": "en"
+}

@@ -1,0 +1,51 @@
+{
+  "name": "5f23a8ae-a852-4140-95f0-50463c13524e",
+  "actions": [ {
+    "agentUtterance": {
+      "text": "I am sorry to hear that. Please provide the last four digits of your card so I can lock it for you immediately."
+    }
+  }, {
+    "userUtterance": {
+      "text": "3456"
+    }
+  }, {
+    "toolUse": {
+      "tool": "Apex_Banking_Tool",
+      "action": "lock_card",
+      "inputActionParameters": {
+        "requestBody": {
+          "card_last_four": "3456"
+        }
+      },
+      "outputActionParameters": {
+        "200": {
+          "action_taken": "CARD_LOCKED",
+          "card_last_four": "3456",
+          "message": "Your card ending in 3456 has been successfully locked.",
+          "status": "success"
+        }
+      }
+    }
+  }, {
+    "agentUtterance": {
+      "text": "I have successfully locked your card ending in three four five six. Is there anything else I can assist you with today?"
+    }
+  } ],
+  "playbookInput": {
+    "precedingConversationSummary": "User asked to lock the card",
+    "actionParameters": {
+    
+    }
+  },
+  "playbookOutput": {
+    "executionSummary": "the agent successfully called the tool and locked the card from backend",
+    "actionParameters": {
+    
+    }
+  },
+  "displayName": "lost_card",
+  "retrievalStrategy": "DEFAULT",
+  "tokenCount": 279,
+  "conversationState": "OUTPUT_STATE_OK",
+  "languageCode": "en"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "6bc758ed-828b-4cbc-a125-e1a70d429517",
+  "displayName": "telephony.capabilities",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-contextual",
+    "value": "sys-contextual"
+  } ],
+  "description": "This intent is triggered when user asks about the what type of help the agent can provide.",
+  "numTrainingPhrases": 5
+}

@@ -1,0 +1,16 @@
+{
+  "name": "a6abb3b2-d0eb-4543-af47-189925f9cea0",
+  "displayName": "Apex_Banking_Tool",
+  "description": "Secure core banking API tool used to perform real-time card security management (locking lost/stolen credit or debit cards) and retrieving customer account balances during active voice interactions.",
+  "openApiSpec": {
+    "authentication": {
+      "apiKeyConfig": {
+        "keyName": "x-api-key",
+        "apiKey": "123456",
+        "requestLocation": "HEADER"
+      }
+    },
+    "ignoreUnknownFields": true
+  },
+  "toolType": "CUSTOMIZED_TOOL"
+}

@@ -1,0 +1,52 @@
+{
+  "name": "00000000-0000-0000-0000-000000000000",
+  "displayName": "Default Start Flow",
+  "description": "A start flow created along with the agent",
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "मुझे समझ नहीं आया. क्या आप अपनी बात दोहरा सकते हैं?", "आपने क्या कहा, मुझे समझ नहीं आया. फिर से कहें?", "माफ़ करें, क्या आप अपनी बात दोहरा सकते हैं?", "माफ़ करें, क्या आप अपनी बात फिर से कह सकते हैं?", "क्या आप अपनी बात दोहरा सकते हैं?", "माफ़ करें, मुझे समझ नहीं आया|", "माफ़ करें, क्या कहा आपने?", "एक बार फिर से कह सकते हैं?", "क्या कहा आपने?", "एक बार फिर से कहिए?", "मुझे समझ नहीं आया|" ]
+        },
+        "languageCode": "hi"
+      } ]
+    },
+    "name": "f53972c0-073d-47c6-b820-5eca0deaef23"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "मुझे समझ नहीं आया. क्या आप अपनी बात दोहरा सकते हैं?", "आपने क्या कहा, मुझे समझ नहीं आया. फिर से कहें?", "माफ़ करें, क्या आप अपनी बात दोहरा सकते हैं?", "माफ़ करें, क्या आप अपनी बात फिर से कह सकते हैं?", "क्या आप अपनी बात दोहरा सकते हैं?", "माफ़ करें, मुझे समझ नहीं आया|", "माफ़ करें, क्या कहा आपने?", "एक बार फिर से कह सकते हैं?", "क्या कहा आपने?", "एक बार फिर से कहिए?", "मुझे समझ नहीं आया|" ]
+        },
+        "languageCode": "hi"
+      } ]
+    },
+    "name": "d63b0596-e245-4b3c-a807-a24dc5ab1551"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  },
+  "nluSettingsList": [ {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "customConfigKey": "459525f5-34ac-49ab-8259-70e4c0b9a455",
+    "languageCode": "en"
+  } ],
+  "multiLanguageSettings": {
+    "enableMultiLanguageDetection": true,
+    "supportedResponseLanguageCodes": [ "hi", "en" ]
+  }
+}

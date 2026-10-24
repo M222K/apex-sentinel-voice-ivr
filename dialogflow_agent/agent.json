@@ -1,0 +1,84 @@
+{
+  "displayName": "Apex_Banking_Agent",
+  "defaultLanguageCode": "en",
+  "supportedLanguageCodes": [ "hi" ],
+  "timeZone": "Asia/Kathmandu",
+  "projectNumber": 722305044927,
+  "speechToTextSettings": {
+    "enableSpeechAdaptation": true
+  },
+  "enableSpellCorrection": true,
+  "advancedSettings": {
+    "enabled": true,
+    "audioExportGcsDestination": {
+    
+    },
+    "speechSettings": {
+      "endpointerSensitivity": 90,
+      "noSpeechTimeout": {
+        "seconds": 5
+      },
+      "useTimeoutBasedEndpointing": true,
+      "models": [ {
+        "key": "en",
+        "value": "telephony"
+      } ]
+    },
+    "playbackInterruptionSettings": {
+      "allowPlaybackInterruption": true
+    },
+    "dtmfSettings": {
+      "enabled": true,
+      "customRule": {
+      
+      },
+      "interdigitTimeoutDuration": {
+        "seconds": 5
+      },
+      "endpointingTimeoutDuration": {
+        "seconds": 5
+      }
+    },
+    "loggingSettings": {
+    
+    },
+    "speechAdaptationSettings": {
+    
+    }
+  },
+  "speakerIdSettings": {
+  
+  },
+  "textToSpeechSettings": {
+    "synthesizeSpeechConfigs": [ {
+      "key": "en",
+      "value": {
+        "speakingRate": 1,
+        "pitch": 2,
+        "voice": {
+        
+        }
+      }
+    }, {
+      "key": "hi",
+      "value": {
+        "speakingRate": 1,
+        "pitch": 2,
+        "voice": {
+        
+        }
+      }
+    } ]
+  },
+  "duplexSettings": {
+  
+  },
+  "answerFeedbackSettings": {
+  
+  },
+  "startPlaybook": "Default Generative Playbook",
+  "enableMultiLanguageTraining": true,
+  "webClientSettings": {
+    "boxBorderRadius": "0"
+  }
+}

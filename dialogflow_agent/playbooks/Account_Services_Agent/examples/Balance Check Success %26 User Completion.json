@@ -1,0 +1,57 @@
+{
+  "name": "d9e27a02-dbc5-426b-bb56-c47dbf26d1dc",
+  "actions": [ {
+    "toolUse": {
+      "tool": "Apex_Banking_Tool",
+      "action": "get_balance",
+      "inputActionParameters": {
+        "requestBody": {
+          "account_id": "123456"
+        }
+      },
+      "outputActionParameters": {
+        "200": {
+          "account_id": "123456",
+          "available_balance": 12450.799999999999,
+          "currency": "USD",
+          "message": "Your available account balance is 12,450 dollars and 80 cents.",
+          "status": "success"
+        }
+      }
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Your available balance for account one two three four five six is twelve thousand four hundred fifty dollars and eighty cents."
+    }
+  }, {
+    "userUtterance": {
+      "text": "okay"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Is there anything else I can help you with today?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "no thanks"
+    }
+  } ],
+  "playbookInput": {
+    "precedingConversationSummary": "User verification was successful and auth_verification agent routed to service agent.",
+    "actionParameters": {
+    
+    }
+  },
+  "playbookOutput": {
+    "executionSummary": "User checked balance and confirmed no further assistance needed.",
+    "actionParameters": {
+      "account_task_status": "completed",
+      "user_satisfied": true
+    }
+  },
+  "displayName": "Balance Check Success \u0026 User Completion",
+  "retrievalStrategy": "DEFAULT",
+  "tokenCount": 303,
+  "conversationState": "OUTPUT_STATE_OK",
+  "languageCode": "en"
+}

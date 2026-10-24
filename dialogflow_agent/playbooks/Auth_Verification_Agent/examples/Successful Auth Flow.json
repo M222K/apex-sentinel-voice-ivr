@@ -1,0 +1,81 @@
+{
+  "name": "20bc4ef0-d796-46ed-bd3a-c16bd21c6acf",
+  "actions": [ {
+    "agentUtterance": {
+      "text": "I only need your 6-digit Account ID to begin. Please provide it."
+    }
+  }, {
+    "userUtterance": {
+      "text": "234567"
+    }
+  }, {
+    "toolUse": {
+      "tool": "Apex_Banking_Tool",
+      "action": "send_otp",
+      "inputActionParameters": {
+        "requestBody": {
+          "account_id": "234567"
+        }
+      },
+      "outputActionParameters": {
+        "200": {
+          "message": "An OTP has been dispatched to the mobile number registered with account 234567.",
+          "status": "success"
+        }
+      }
+    }
+  }, {
+    "agentUtterance": {
+      "text": "An OTP has been sent. Please enter your 4-digit security code."
+    }
+  }, {
+    "userUtterance": {
+      "text": "6537"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "I heard 6 5 3 7. Is that correct?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "yes"
+    }
+  }, {
+    "toolUse": {
+      "tool": "Apex_Banking_Tool",
+      "action": "verify_otp",
+      "inputActionParameters": {
+        "requestBody": {
+          "account_id": "234567",
+          "user_otp": "6537"
+        }
+      },
+      "outputActionParameters": {
+        "200": {
+          "authenticated": true,
+          "message": "OTP verification successful.",
+          "status": "success"
+        }
+      }
+    }
+  } ],
+  "playbookInput": {
+    "precedingConversationSummary": "The user asked to lock card , the agent redirected the flow for authentication first .",
+    "actionParameters": {
+    
+    }
+  },
+  "playbookOutput": {
+    "executionSummary": "Authentication successful.",
+    "actionParameters": {
+      "account_id": 234567,
+      "is_authenticated": true
+    }
+  },
+  "displayName": "Successful Auth Flow",
+  "retrievalStrategy": "DEFAULT",
+  "description": "Successful authentication by agent {happy path}",
+  "tokenCount": 432,
+  "conversationState": "OUTPUT_STATE_OK",
+  "languageCode": "en"
+}

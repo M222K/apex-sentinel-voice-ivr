@@ -1,0 +1,28 @@
+{
+  "name": "0cf33185-f28a-42df-9811-2819a131175b",
+  "actions": [ {
+    "userUtterance": {
+      "text": "hello"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Hello! I'm Ria, your virtual assistant for Apex Financial. How can I help you today?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "i want to lock my card"
+    }
+  } ],
+  "playbookOutput": {
+    "executionSummary": "Agent Routed to verification playbook",
+    "actionParameters": {
+    
+    }
+  },
+  "displayName": "Auth_Verification_Agent.redirect.success",
+  "retrievalStrategy": "DEFAULT",
+  "description": "successful redirection of agent",
+  "tokenCount": 97,
+  "conversationState": "OUTPUT_STATE_PENDING",
+  "languageCode": "en"
+}

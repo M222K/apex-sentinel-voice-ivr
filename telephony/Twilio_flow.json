@@ -1,0 +1,54 @@
+{
+  "initial_state": "Trigger",
+  "flags": {
+    "allow_concurrent_calls": true
+  },
+  "description": "Dialogflow CX Connector",
+  "states": [
+    {
+      "name": "Trigger",
+      "type": "trigger",
+      "transitions": [
+        {
+          "event": "incomingMessage"
+        },
+        {
+          "next": "connect_virtual_agent_1",
+          "event": "incomingCall"
+        },
+        {
+          "event": "incomingConversationMessage",
+          "conditions": []
+        },
+        {
+          "event": "incomingRequest"
+        },
+        {
+          "event": "incomingParent",
+          "conditions": []
+        }
+      ],
+      "properties": {
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    {
+      "name": "connect_virtual_agent_1",
+      "type": "connect-virtual-agent-v2",
+      "transitions": [],
+      "properties": {
+        "offset": {
+          "x": 80,
+          "y": 250
+        },
+        "status_callback_method": "POST",
+        "session_behavior": "new_session",
+        "channel": "voice",
+        "connector_name": "Apex-bank-agent"
+      }
+    }
+  ]
+}

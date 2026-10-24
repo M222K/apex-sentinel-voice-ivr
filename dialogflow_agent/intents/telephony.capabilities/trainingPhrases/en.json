@@ -1,0 +1,33 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "What are my options?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "How can you help me?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Help me"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "What can you do?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "what can you help with?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

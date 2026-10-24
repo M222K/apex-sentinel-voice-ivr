@@ -1,0 +1,31 @@
+{
+  "name": "0bd6c589-d92a-4de9-90b2-a1ebaece216f",
+  "actions": [ {
+    "userUtterance": {
+      "text": "hello"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "Hello! I'm Ria, your virtual assistant for Apex Financial. How can I help you today?"
+    }
+  }, {
+    "userUtterance": {
+      "text": "what can you help with"
+    }
+  }, {
+    "agentUtterance": {
+      "text": "I can help you check your account balance, lock a misplaced debit or credit card. What would you like to do?"
+    }
+  } ],
+  "playbookOutput": {
+    "executionSummary": "the agent answered the query with services available.",
+    "actionParameters": {
+    
+    }
+  },
+  "displayName": "Help_quetion",
+  "retrievalStrategy": "DEFAULT",
+  "tokenCount": 135,
+  "conversationState": "OUTPUT_STATE_OK",
+  "languageCode": "en"
+}
